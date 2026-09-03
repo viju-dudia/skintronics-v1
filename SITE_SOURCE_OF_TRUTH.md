@@ -3,8 +3,9 @@
 > Status: Active  
 > Last updated: 2026-09-03  
 > Primary source: Chat record supplied by the site owner, dated 7/29 (year not provided)  
+> First-party asset source: `Skintroniks-20260903T124736Z-1-001/Skintroniks/`
 > Reference source: ProTouch Spectra Glow product page, accessed 2026-09-03  
-> Scope: Product details, Instagram discount call-to-action, and external product-page reference
+> Scope: Brand identity, approved product assets, product details, Instagram discount call-to-action, and external product-page reference
 
 This file is the canonical source for product copy used across this website. Future site content should follow it unless the owner supplies a newer source. Claims here have been normalized from the supplied chat, but they have not been independently verified.
 
@@ -12,17 +13,20 @@ This file is the canonical source for product copy used across this website. Fut
 
 - Source product name: **Photon Skin Rejuvenation Mask**
 - Product type: LED light-therapy face mask intended for skin rejuvenation and repair
-- Brand name: **Not provided in the source**
+- Confirmed brand name and spelling: **SKINTRONICS**
+- Primary logo: [`SKINTRONICS_LOGO.png`](Skintroniks-20260903T124736Z-1-001/Skintroniks/SKINTRONICS_LOGO.png)
 - Instagram page: [@skintronics_](https://www.instagram.com/skintronics_?utm_source=qr&igsh=MXUxZ2Nwb2Y3emQxZg==)
 - Instagram CTA: **Follow the page for a discount.**
 
-Do not treat the Instagram handle as the product's formal brand name without owner confirmation.
+Use **SKINTRONICS** in customer-facing copy. “Skintroniks” is the downloaded folder spelling, not the approved brand spelling. The supplied logo is a 2085 x 1221 PNG with transparency and contains a butterfly/mask-style symbol above the SKINTRONICS wordmark.
 
 ## Core product specifications
 
 | Attribute | Approved source detail |
 | --- | --- |
+| Product model | SM-2309 |
 | LED output | 944 high-energy pulsed LED light beams |
+| LED construction | Supplier graphic states 118 sets of 8-color lights, 944 pieces total |
 | Light options | 7 visible-light modes plus infrared light |
 | Repair programs | 3 skin-repair modes |
 | Material | Soft latex |
@@ -31,7 +35,18 @@ Do not treat the Instagram handle as the product's formal brand name without own
 | Battery | Built-in 2600 mAh lithium battery |
 | Controls | Controller with LED display |
 | Charging | Type-C charging interface |
+| Working voltage | 3.7 V |
+| Charging input | DC 5 V / 1 A |
+| Product size | 324 x 213 x 4.3 mm |
 | Treatment characteristic | Designed to deliver deep light penetration into skin layers |
+
+The supplied specification graphic prints “Rated voltage 4.7W.” Because watts measure power rather than voltage, do not publish or silently relabel this value until the manufacturer confirms whether it means **rated power: 4.7 W**.
+
+### Known specification conflicts
+
+- **Weight:** the owner-supplied chat and two marketing images say approximately 190 g; the dedicated specification graphic says approximately 170 g. Continue using approximately 190 g only as the current owner-approved value, and request manufacturer confirmation.
+- **Material:** the owner-supplied chat says soft latex; the quick-use graphic refers to wiping the “silicone part.” Continue using soft latex only as the current owner-approved value, and request manufacturer confirmation, especially because allergen and skin-contact guidance depend on it.
+- **Emitter count terminology:** the specification graphic describes 118 sets of eight-color lights and 944 total pieces. Marketing graphics call these 944 pulse lights/light beams. Do not imply that 944 separate packages or independently positioned LEDs are visible without technical confirmation.
 
 ## Light modes and source-stated benefits
 
@@ -66,6 +81,103 @@ The product is described as helping to:
 - Enhance overall skin health
 
 These are marketing claims supplied by the owner, not independently verified clinical findings.
+
+## First-party brand and image library
+
+The owner has supplied the following folder for website use:
+
+`Skintroniks-20260903T124736Z-1-001/Skintroniks/`
+
+There are **28 JPG images and one PNG logo**. The files may be used as source assets, but any claims embedded inside an image remain subject to the same evidence and compliance rules as written page copy.
+
+### Brand asset
+
+| File | Role | Usage note |
+| --- | --- | --- |
+| [`SKINTRONICS_LOGO.png`](Skintroniks-20260903T124736Z-1-001/Skintroniks/SKINTRONICS_LOGO.png) | Official brand mark and wordmark | Preferred header, footer, favicon/source-mark, and brand-identification asset; preserve proportions and transparency |
+
+No official typeface, minimum clear space, alternate lockup, monochrome version, or print color specification was supplied. The visible logo palette uses coral, pink/red, magenta, and plum.
+
+The website currently uses this **interim screen palette**, visually derived from the supplied logo. These are implementation tokens, not official Pantone, CMYK, or print-production values:
+
+| Token | Hex | Intended use |
+| --- | --- | --- |
+| Brand 50 | `#FFF8F8` | Page background |
+| Brand 100 | `#FFF0F2` | Soft tinted surface |
+| Brand 200 | `#FFD7DE` | Selection and light accent |
+| Brand 500 | `#F94F5E` | Coral action/accent |
+| Brand 600 | `#C91450` | Magenta emphasis |
+| Brand 900 | `#4F173F` | Deep plum text and primary actions |
+
+### Clean product imagery
+
+| File | Subject | Suggested website role |
+| --- | --- | --- |
+| `IMG-20260729-WA0008.jpg` | Rear/interior view with illuminated LEDs | Product gallery; LED coverage detail |
+| `IMG-20260729-WA0011.jpg` | Front view of rose-gold/pink mask | Primary product image or gallery |
+| `IMG-20260729-WA0012.jpg` | Rose-gold/pink and black masks | Color/variant overview; availability still needs confirmation |
+| `IMG-20260729-WA0016.jpg` | Angled front view | Product gallery |
+| `IMG-20260729-WA0017.jpg` | Two-color angled composition | Variant or product-range visual |
+| `IMG-20260729-WA0024.jpg` | Flat front view on white | Specifications, dimensions, or product gallery |
+
+### Lifestyle and hero imagery
+
+| File | Subject | Suggested website role |
+| --- | --- | --- |
+| `IMG-20260729-WA0015.jpg` | Waterproof detail and person wearing mask | Comfort/water-resistance section; contains 190 g claim |
+| `IMG-20260729-WA0028.jpg` | Person wearing mask | Eight-light-mode section |
+| `IMG-20260805-WA0008.jpg` | Waterproof close-up and laptop lifestyle scene | Feature section; contains IPX7 and 190 g claims |
+| `IMG-20260805-WA0010.jpg` | Seated person wearing illuminated mask | Hero or lifestyle section |
+| `IMG-20260805-WA0011.jpg` | Person wearing mask in bright home setting | Lifestyle gallery |
+| `IMG-20260805-WA0012.jpg` | Close-up lifestyle portrait with illuminated mask | Hero, campaign, or lifestyle gallery |
+
+The August lifestyle images appear more heavily composited than the clean product renders. Review them at final layout size for product-shape consistency, realism, and disclosure requirements before using them as primary evidence of fit or results.
+
+### Informational and marketing graphics
+
+| File | Content | Usage status |
+| --- | --- | --- |
+| `IMG-20260729-WA0009.jpg` | Model, electrical, LED, size, weight, battery, and IPX7 specifications | Useful reference; resolve 170 g conflict and 4.7W label before publishing |
+| `IMG-20260729-WA0010.jpg` | Lightweight, thin, and soft construction | Usable feature graphic after copy cleanup |
+| `IMG-20260729-WA0013.jpg` | 944 lights, benefits, ODM/OEM, and CE/RoHS/PSE/MSDS badges | Do not use publicly until certifications and claim rights are documented |
+| `IMG-20260729-WA0014.jpg` | 944 high-energy pulsed light beams | Feature graphic; its four-week-test disclaimer must remain if used |
+| `IMG-20260729-WA0018.jpg` | 944 high-energy pulsed light beams | Feature graphic |
+| `IMG-20260729-WA0019.jpg` | Six “upgrade” metrics and translated supplier claims | Reference only; do not publish without clarification and evidence |
+| `IMG-20260729-WA0020.jpg` | Four-step quick-use guide | Useful instruction reference; material wording conflicts with chat |
+| `IMG-20260729-WA0021.jpg` | Claimed 28-day internal efficacy percentages | Hold from public use pending the full study and substantiation |
+| `IMG-20260729-WA0023.jpg` | Mask with LED display controller | Good product/controller feature visual; embedded benefit copy needs editing |
+| `IMG-20260729-WA0025.jpg` | Close-to-skin versus panel comparison | Hold from public use unless the comparison is accurate and substantiated |
+| `IMG-20260729-WA0026.jpg` | Benefits for all eight light options | Useful content reference; rewrite into compliant site copy |
+| `IMG-20260729-WA0027.jpg` | Four-week before-and-after examples | Hold pending evidence, model consent, image provenance, and retouching disclosure |
+| `IMG-20260729-WA0029.jpg` | Six upgrade highlights and daily 10-minute statement | Reference only; metrics and recommended schedule need verification |
+| `IMG-20260729-WA0030.jpg` | Three repair modes and illustrated penetration depths | Use only as a conceptual illustration; do not imply measured depth without evidence |
+| `IMG-20260729-WA0031.jpg` | Instagram QR code and @SKINTRONICS_ handle | Social follow/discount section |
+| `IMG-20260805-WA0009.jpg` | Three repair modes and skin-layer illustration | Use only as a conceptual illustration; contains spelling errors that should not ship |
+
+### Supplier-image usage flow
+
+The quick-user-guide image supplies this provisional flow:
+
+1. Remove makeup, cleanse the face, and dry it.
+2. Connect the mask to the head band and controller, then put it on.
+3. Long-press the power control, choose a mode and duration, and begin the session.
+4. After automatic shut-off, remove the mask, continue the skincare routine, and clean the skin-contact surface.
+
+This flow may guide future instructions, but the final procedure must come from the product's approved user manual. The supplied images do not clearly confirm session limits, charging safety, cleaning liquids, eye protection, contraindications, or whether all eight light options can be combined.
+
+### Claims present in assets but not cleared for site copy
+
+- CE, RoHS, PSE, and MSDS certification claims
+- “Source factory quality assurance,” “national standard quality,” and private-mold claims
+- 10 minutes of daily use
+- 28-day/four-week efficacy and before-and-after claims
+- Internal-test percentages for brightness, moisture, melanin, tightness, melasma/stripes, acne, and redness
+- Percentage claims for energy, beam, light-wave, effect, or penetration improvements
+- “Eight years of energy without decay” and other unclear translated upgrade claims
+- Penetration to fascia or muscle layers
+- Any promise to remove acne, sores, scars, melasma, or sagging
+
+These items can be reconsidered after manufacturer documents, study methods, participant details, rights/releases, and applicable-market compliance are reviewed.
 
 ## External product reference: ProTouch Spectra Glow
 
@@ -191,20 +303,25 @@ When the sources conflict, the owner-supplied product record remains authoritati
 
 ## Details still needed from the owner
 
-- Confirmed public brand name and exact model name
+- Confirmed customer-facing product name: “Photon Skin Rejuvenation Mask” versus the graphic's “Photon Rejuvenation Device”; supplier model SM-2309 is now recorded
 - Exact wavelengths for all eight light options
-- Clarification of whether "944 light beams" means 944 individual LEDs, emitters, or another measurement
-- Latex/allergen and skin-contact safety information
+- Manufacturer confirmation of the preferred emitter terminology for 118 eight-color sets / 944 total light elements
+- Resolution of the approximately 190 g versus approximately 170 g weight conflict
+- Resolution of soft latex versus silicone material wording, including allergen and skin-contact safety information
 - Recommended session length, frequency, and operating instructions
 - Contraindications, eye-safety guidance, warnings, and intended-user restrictions
 - Battery runtime and full charging time
-- Product dimensions and available colors
+- Confirmation that the pictured rose-gold/pink and black versions are both available for sale
 - Included accessories and package contents
 - Price, currency, discount mechanics, shipping regions, returns, and warranty
+- Documents supporting the displayed CE, RoHS, PSE, and MSDS claims
 - Evidence supporting clinical, medical, safety, and performance claims
-- Approved results photos, product images, testimonials, and permission to publish them
+- Source files, study records, model releases, and retouching disclosures for before-and-after or results imagery
+- Logo guidelines, official color values, alternate lockups, and favicon artwork
 
 ## Change log
 
+- **2026-09-03:** Applied the SKINTRONICS identity across all five site pages: titles, favicon, header/footer logos, product naming, Instagram destination, copyright, supporting brand copy, and the interim logo-derived web palette.
+- **2026-09-03:** Confirmed SKINTRONICS as the brand from the supplied logo; catalogued 28 JPG assets and the transparent PNG logo; added supplier specifications, provisional usage instructions, asset roles, claim restrictions, and material/weight conflicts.
 - **2026-09-03:** Added ProTouch Spectra Glow as a separately labeled external reference, including positioning, light-mode presentation, specifications, usage, safety, package contents, commercial snapshot, page structure, and differences from the owner-supplied product record.
 - **2026-09-03:** Created from the owner-supplied 7/29 chat record. No external claims or inferred specifications were added.
