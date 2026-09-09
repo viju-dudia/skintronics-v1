@@ -1,214 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Science of Phototherapy | SKINTRONICS</title>
+    <meta name="description" content="Explore the confirmed light-system and construction details of the SKINTRONICS Photon Skin Rejuvenation Mask.">
+    <title>Light System | SKINTRONICS</title>
     <link rel="icon" type="image/png" href="Skintroniks-20260903T124736Z-1-001/Skintroniks/SKINTRONICS_LOGO.png">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#FFF8F8',
-                            100: '#FFF0F2',
-                            200: '#FFD7DE',
-                            500: '#F94F5E',
-                            600: '#C91450',
-                            900: '#4F173F',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        .lux-card { background: #ffffff; border: 1px solid rgba(229, 222, 214, 0.6); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.03); }
-        .hero-glow-red { box-shadow: 0 0 50px rgba(230, 57, 70, 0.15); }
-        .hero-glow-blue { box-shadow: 0 0 50px rgba(42, 157, 143, 0.15); }
-        .hero-glow-amber { box-shadow: 0 0 50px rgba(231, 111, 81, 0.15); }
-    </style>
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="site.js" defer></script>
 </head>
-<body class="bg-brand-50 text-stone-800 font-sans antialiased">
-    
-    <!-- Top Announcement Bar -->
-    <div class="bg-brand-900 text-brand-100 text-xs py-2 px-4 text-center font-medium tracking-wide flex justify-center items-center gap-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span>EXCLUSIVE OFFER: Free Express Shipping Nationwide + 30-Day Risk-Free Trial</span>
-    </div>
-
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200 transition-all">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="index.html" class="flex items-center" aria-label="SKINTRONICS home">
-                <img src="Skintroniks-20260903T124736Z-1-001/Skintroniks/SKINTRONICS_LOGO.png" alt="SKINTRONICS" width="2085" height="1221" class="h-14 w-auto">
-            </a>
-
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
-                <a href="index.html" class="hover:text-brand-900 transition">The Mask</a>
-                <a href="science.html" class="text-brand-900 font-semibold border-b-2 border-brand-900 pb-1">The Science</a>
-                <a href="results.html" class="hover:text-brand-900 transition">Clinical Results</a>
-                <a href="how-to-use.html" class="hover:text-brand-900 transition">How To Use & FAQ</a>
-            </nav>
-
-            <!-- Actions CTA -->
-            <div class="flex items-center gap-4">
-                <a href="checkout.html" class="relative p-2 text-stone-700 hover:text-brand-900">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-                    <span class="absolute top-1 right-1 bg-brand-900 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">1</span>
-                </a>
-                <a href="checkout.html" class="bg-brand-900 hover:bg-stone-800 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full tracking-wide transition shadow-sm hover:shadow">
-                    Order Now &bull; $199
-                </a>
-            </div>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div class="announcement"><a href="https://www.instagram.com/skintronics_?utm_source=qr&amp;igsh=MXUxZ2Nwb2Y3emQxZg==" target="_blank" rel="noopener noreferrer">Follow @skintronics_ for a discount <span aria-hidden="true">→</span></a></div>
+    <header class="site-header">
+        <div class="shell nav-bar">
+            <a class="brand" href="index.html" aria-label="SKINTRONICS home"><img src="Skintroniks-20260903T124736Z-1-001/Skintroniks/SKINTRONICS_LOGO.png" alt="SKINTRONICS" width="2085" height="1221"></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation"><span class="sr-only">Toggle navigation</span><span></span><span></span></button>
+            <nav class="site-nav" id="site-navigation" aria-label="Primary navigation"><a href="index.html">The mask</a><a href="science.html" aria-current="page">Light system</a><a href="results.html">Benefits</a><a href="how-to-use.html">Using the mask</a></nav>
+            <a class="button button--primary header-cta" href="checkout.html">Order information</a>
         </div>
     </header>
 
+    <main id="main">
+        <section class="page-hero" aria-labelledby="science-title">
+            <div class="page-hero__copy">
+                <p class="eyebrow">Inside SKINTRONICS</p>
+                <h1 id="science-title">Inside the light system.</h1>
+                <p class="lede">A closer look at the supplied construction details behind the Photon Skin Rejuvenation Mask.</p>
+                <div class="hero-actions"><a class="button button--primary" href="#construction">Explore the construction</a></div>
+                <p class="hero-note">Precise wavelengths in nanometres have not yet been supplied.</p>
+            </div>
+            <div class="page-hero__media">
+                <img src="assets/led-interior-1060.webp" srcset="assets/led-interior-480.webp 480w, assets/led-interior-1060.webp 1060w" sizes="(max-width: 900px) 100vw, 55vw" alt="Interior view of the SKINTRONICS mask with its light pattern illuminated" width="1060" height="1060" fetchpriority="high">
+            </div>
+        </section>
 
-    <section class="py-16 bg-white border-b border-stone-200">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="text-xs font-bold uppercase tracking-widest text-brand-600">Dermatological Physics</span>
-            <h1 class="font-serif text-4xl sm:text-5xl font-bold text-brand-900 mt-2">The Science of Photobiomodulation</h1>
-            <p class="text-base text-stone-600 mt-4 max-w-2xl mx-auto leading-relaxed">
-                How medical-grade LED wavelengths trigger cellular ATP production to naturally rebuild collagen, clear blemishes, and repair aged dermal tissue.
-            </p>
+        <div class="fact-strip" aria-label="Light system overview">
+            <div class="fact"><strong>944</strong><span>Source-described pulsed light beams</span></div>
+            <div class="fact"><strong>118</strong><span>Sets of eight-color lights in the supplier graphic</span></div>
+            <div class="fact"><strong>8</strong><span>Seven visible-light options plus infrared</span></div>
         </div>
-    </section>
 
-    <section class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div class="lux-card rounded-3xl p-8 sm:p-10">
-            <h2 class="font-serif text-2xl font-bold text-brand-900 mb-4">How Light Reaches Your Skin Layers</h2>
-            <p class="text-sm text-stone-600 leading-relaxed mb-8">
-                Unlike topicals that sit on the outer stratum corneum, photon light energy travels through cellular barriers to directly energize mitochondrial powerhouses.
-            </p>
+        <section class="section section--white" id="construction" aria-labelledby="construction-title">
+            <div class="shell editorial-split">
+                <div class="editorial-media reveal">
+                    <img src="assets/light-beams-1060.webp" srcset="assets/light-beams-480.webp 480w, assets/light-beams-1060.webp 1060w" sizes="(max-width: 900px) 100vw, 50vw" alt="Graphic showing the illuminated light-beam pattern across the mask" width="1060" height="1060" loading="lazy">
+                </div>
+                <div class="reveal">
+                    <p class="eyebrow">Light coverage</p>
+                    <h2 id="construction-title">Designed to bring light close to the skin.</h2>
+                    <p class="lede">Owner-supplied information describes 944 high-energy pulsed light beams arranged across 118 sets of eight-color lights.</p>
+                    <ul class="fact-list">
+                        <li class="fact-item"><span class="item-index">01</span><div><h3>Eight light options</h3><p>Red, blue, yellow, green, purple, cyan, orange, and infrared.</p></div></li>
+                        <li class="fact-item"><span class="item-index">02</span><div><h3>Three repair programs</h3><p>Programs described for balance, clarity, and wrinkle-care goals.</p></div></li>
+                        <li class="fact-item"><span class="item-index">03</span><div><h3>Flexible format</h3><p>A soft-latex design with a controller and LED display.</p></div></li>
+                    </ul>
+                    <p class="source-note">“944 light beams” follows the owner-approved terminology. The manufacturer has not yet confirmed whether these represent separately positioned LED packages.</p>
+                </div>
+            </div>
+        </section>
 
-            <div class="space-y-4">
-                <div class="bg-blue-50/70 border border-blue-200 rounded-2xl p-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-blue-500"></span>
-                            <span class="font-bold text-sm text-stone-900">Blue Light (460nm) &bull; Epidermis Layer (0.5mm)</span>
-                        </div>
-                        <p class="text-xs text-stone-600 mt-1">Targets P. acnes bacteria in pores, neutralizing active breakouts and stabilizing sebum secretion.</p>
+        <section class="section section--tint" aria-labelledby="hardware-title">
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Hardware overview</p>
+                    <h2 id="hardware-title">The details currently confirmed.</h2>
+                    <p class="lede">Technical information is limited to the owner-supplied product record and is presented without added assumptions.</p>
+                </div>
+                <div class="two-column-copy">
+                    <div class="copy-column reveal">
+                        <h3>Device</h3>
+                        <dl class="spec-list">
+                            <div class="spec-row"><dt>Model</dt><dd>SM-2309</dd></div>
+                            <div class="spec-row"><dt>Material</dt><dd>Soft latex</dd></div>
+                            <div class="spec-row"><dt>Size</dt><dd>324 × 213 × 4.3 mm</dd></div>
+                            <div class="spec-row"><dt>Weight</dt><dd>Approx. 190 g</dd></div>
+                            <div class="spec-row"><dt>Water resistance</dt><dd>IPX7</dd></div>
+                        </dl>
                     </div>
-                    <span class="text-xs font-mono font-bold bg-white px-3 py-1 rounded-full border border-blue-200 text-blue-700">Surface Clarity</span>
-                </div>
-
-                <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-amber-500"></span>
-                            <span class="font-bold text-sm text-stone-900">Yellow/Amber Light (590nm) &bull; Upper Dermis (1.0mm - 2.0mm)</span>
-                        </div>
-                        <p class="text-xs text-stone-600 mt-1">Stimulates micro-capillary blood flow and lymphatic drainage to relieve inflammation and redness.</p>
+                    <div class="copy-column reveal">
+                        <h3>Power and control</h3>
+                        <dl class="spec-list">
+                            <div class="spec-row"><dt>Battery</dt><dd>2600 mAh</dd></div>
+                            <div class="spec-row"><dt>Charging</dt><dd>Type-C</dd></div>
+                            <div class="spec-row"><dt>Input</dt><dd>DC 5 V / 1 A</dd></div>
+                            <div class="spec-row"><dt>Working voltage</dt><dd>3.7 V</dd></div>
+                            <div class="spec-row"><dt>Controller</dt><dd>LED display</dd></div>
+                        </dl>
                     </div>
-                    <span class="text-xs font-mono font-bold bg-white px-3 py-1 rounded-full border border-amber-200 text-amber-700">Vascular Repair</span>
                 </div>
+            </div>
+        </section>
 
-                <div class="bg-rose-50/70 border border-rose-200 rounded-2xl p-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                            <span class="font-bold text-sm text-stone-900">Red Light (630nm) &bull; Deep Reticular Dermis (2.5mm - 3.5mm)</span>
-                        </div>
-                        <p class="text-xs text-stone-600 mt-1">Energizes fibroblasts to stimulate natural Collagen Type I & III synthesis, lifting wrinkles from the root.</p>
+        <section class="section" aria-labelledby="known-title">
+            <div class="shell">
+                <div class="section-heading reveal"><p class="eyebrow">Clear by design</p><h2 id="known-title">What is known—and what is not.</h2></div>
+                <div class="two-column-copy">
+                    <div class="copy-column reveal">
+                        <h3>Supported by the supplied record</h3>
+                        <ul><li>Seven visible-light modes plus infrared</li><li>Three skin-repair programs</li><li>Deep-light-penetration positioning</li><li>IPX7 water resistance and Type-C charging</li></ul>
                     </div>
-                    <span class="text-xs font-mono font-bold bg-white px-3 py-1 rounded-full border border-rose-200 text-rose-700">Deep Remodeling</span>
+                    <div class="copy-column reveal">
+                        <h3>Awaiting manufacturer confirmation</h3>
+                        <ul><li>Exact wavelengths for every light option</li><li>Preferred emitter-count terminology</li><li>Clinical, medical, and safety evidence</li><li>Final material and weight reconciliation</li></ul>
+                    </div>
                 </div>
+                <div class="hero-actions reveal"><a class="button button--primary" href="results.html">Read the source-stated benefits</a><a class="button button--outline" href="how-to-use.html">Review usage status</a></div>
             </div>
-        </div>
+        </section>
+    </main>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="lux-card rounded-3xl p-8">
-                <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Zero UV Radiation Guarantee</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">
-                    Our photon LEDs are engineered with narrowband diodes that strictly exclude UVA, UVB, and harmful thermal rays. You gain all light rejuvenation benefits with 100% skin and eye safety.
-                </p>
-            </div>
-
-            <div class="lux-card rounded-3xl p-8">
-                <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Uniform Light Matrix</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">
-                    Over 120 precision-positioned medical micro-diodes ensure consistent, gap-free light coverage across the forehead, nose, cheeks, jawline, and chin.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    
-    <!-- Footer -->
-    <footer class="bg-stone-900 text-stone-300 pt-16 pb-12 border-t border-stone-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-            <div>
-                <a href="index.html" class="inline-flex bg-white rounded-lg px-2 py-1 mb-4" aria-label="SKINTRONICS home">
-                    <img src="Skintroniks-20260903T124736Z-1-001/Skintroniks/SKINTRONICS_LOGO.png" alt="SKINTRONICS" width="2085" height="1221" class="h-16 w-auto">
-                </a>
-                <p class="text-sm text-stone-400 leading-relaxed mb-6">
-                    At-home LED light therapy designed to support simple, non-invasive skincare rejuvenation routines.
-                </p>
-                <div class="flex items-center gap-3">
-                    <a href="https://www.instagram.com/skintronics_?utm_source=qr&amp;igsh=MXUxZ2Nwb2Y3emQxZg==" target="_blank" rel="noopener noreferrer" aria-label="Follow SKINTRONICS on Instagram" class="w-9 h-9 rounded-full bg-stone-800 flex items-center justify-center text-stone-300 hover:text-white hover:bg-stone-700 transition">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
-                </div>
-            </div>
-
-            <div>
-                <h4 class="text-white text-sm font-semibold tracking-wider uppercase mb-4">Quick Links</h4>
-                <ul class="space-y-2.5 text-sm text-stone-400">
-                    <li><a href="index.html" class="hover:text-white transition">Product Overview</a></li>
-                    <li><a href="science.html" class="hover:text-white transition">Photon Science</a></li>
-                    <li><a href="results.html" class="hover:text-white transition">Before & After Studies</a></li>
-                    <li><a href="how-to-use.html" class="hover:text-white transition">How to Use & Routine</a></li>
-                    <li><a href="checkout.html" class="hover:text-white transition">Order SKINTRONICS Mask</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white text-sm font-semibold tracking-wider uppercase mb-4">Customer Care</h4>
-                <ul class="space-y-2.5 text-sm text-stone-400">
-                    <li><a href="how-to-use.html#faq" class="hover:text-white transition">Frequently Asked Questions</a></li>
-                    <li><a href="#" class="hover:text-white transition">Shipping & Delivery (3-5 Days)</a></li>
-                    <li><a href="#" class="hover:text-white transition">30-Day Money-Back Guarantee</a></li>
-                    <li><a href="#" class="hover:text-white transition">1-Year Limited Warranty</a></li>
-                    <li><a href="#" class="hover:text-white transition">Contact Support</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white text-sm font-semibold tracking-wider uppercase mb-4">Join The Glow Club</h4>
-                <p class="text-xs text-stone-400 mb-3">Subscribe for dermatological skincare tips and $20 off your first accessory order.</p>
-                <form class="space-y-2" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
-                    <input type="email" placeholder="Enter your email" class="w-full bg-stone-800 border border-stone-700 text-white px-3 py-2 text-sm rounded focus:outline-none focus:border-brand-500">
-                    <button type="submit" class="w-full bg-brand-500 text-brand-900 font-semibold text-xs py-2.5 rounded hover:bg-brand-600 transition">Get My $20 Voucher</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500 gap-4">
-            <p>&copy; 2026 SKINTRONICS. All rights reserved.</p>
-            <div class="flex gap-6">
-                <a href="#" class="hover:text-stone-300">Privacy Policy</a>
-                <a href="#" class="hover:text-stone-300">Terms of Service</a>
-                <a href="#" class="hover:text-stone-300">Medical Disclaimer</a>
-            </div>
-        </div>
-    </footer>
-
+    <footer class="site-footer"><div class="shell"><div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" aria-label="SKINTRONICS home"><img src="Skintroniks-20260903T124736Z-1-001/Skintroniks/SKINTRONICS_LOGO.png" alt="SKINTRONICS" width="2085" height="1221" loading="lazy"></a><p>At-home LED light therapy designed to support a simple, considered skincare routine.</p></div>
+        <nav class="footer-nav" aria-label="Explore"><h2>Explore</h2><a href="index.html">The mask</a><a href="science.html">Light system</a><a href="results.html">Benefits</a><a href="how-to-use.html">Using the mask</a></nav>
+        <nav class="footer-nav" aria-label="Connect"><h2>Connect</h2><a href="checkout.html">Order information</a><a href="https://www.instagram.com/skintronics_?utm_source=qr&amp;igsh=MXUxZ2Nwb2Y3emQxZg==" target="_blank" rel="noopener noreferrer">Instagram</a></nav>
+    </div><div class="footer-bottom"><p>© 2026 SKINTRONICS. All rights reserved.</p><p>Product statements are based on owner-supplied information and are not independently verified.</p></div></div></footer>
 </body>
 </html>

@@ -1,7 +1,7 @@
 # Site Content Source of Truth
 
 > Status: Active  
-> Last updated: 2026-09-03  
+> Last updated: 2026-09-05
 > Primary source: Chat record supplied by the site owner, dated 7/29 (year not provided)  
 > First-party asset source: `Skintroniks-20260903T124736Z-1-001/Skintroniks/`
 > Reference source: ProTouch Spectra Glow product page, accessed 2026-09-03  
@@ -321,6 +321,7 @@ When the sources conflict, the owner-supplied product record remains authoritati
 
 ## Change log
 
+- **2026-09-05:** Rebuilt all five site pages around the approved image library; added a clean-product hero, interactive product gallery, light-option selector, product imagery on supporting pages, and the Instagram discount/QR call-to-action. Removed unconfirmed pricing, shipping, warranty, session-timing, wavelength, clinical, review, and before-and-after claims from the public pages. Added shared responsive styling, accessible navigation and controls, and optimized WebP image variants.
 - **2026-09-03:** Applied the SKINTRONICS identity across all five site pages: titles, favicon, header/footer logos, product naming, Instagram destination, copyright, supporting brand copy, and the interim logo-derived web palette.
 - **2026-09-03:** Confirmed SKINTRONICS as the brand from the supplied logo; catalogued 28 JPG assets and the transparent PNG logo; added supplier specifications, provisional usage instructions, asset roles, claim restrictions, and material/weight conflicts.
 - **2026-09-03:** Added ProTouch Spectra Glow as a separately labeled external reference, including positioning, light-mode presentation, specifications, usage, safety, package contents, commercial snapshot, page structure, and differences from the owner-supplied product record.
