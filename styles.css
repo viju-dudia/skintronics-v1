@@ -253,6 +253,7 @@ a {
 
 .header-cta {
     margin-left: 0.2rem;
+    flex-shrink: 0;
 }
 
 .eyebrow {
@@ -944,7 +945,12 @@ h3 {
     }
 
     .header-cta {
-        display: none;
+        width: auto;
+        font-size: 0.8rem;
+    }
+
+    .nav-bar {
+        gap: 0.75rem;
     }
 
     .nav-toggle {
@@ -1036,10 +1042,11 @@ h3 {
 
     .nav-bar {
         min-height: 4.75rem;
+        gap: 0.5rem;
     }
 
     .brand img {
-        width: 7rem;
+        width: 6rem;
         height: 3.7rem;
     }
 
@@ -1063,6 +1070,14 @@ h3 {
 
     .button {
         width: 100%;
+    }
+
+    .header-cta {
+        width: auto;
+        min-height: 2.75rem;
+        margin-left: 0;
+        padding-inline: 0.75rem;
+        font-size: 0.75rem;
     }
 
     .gallery-frame {

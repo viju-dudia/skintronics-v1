@@ -1,7 +1,7 @@
 # Site Content Source of Truth
 
 > Status: Active  
-> Last updated: 2026-09-05
+> Last updated: 2026-09-09
 > Primary source: Chat record supplied by the site owner, dated 7/29 (year not provided)  
 > First-party asset source: `Skintroniks-20260903T124736Z-1-001/Skintroniks/`
 > Reference source: ProTouch Spectra Glow product page, accessed 2026-09-03  
@@ -319,7 +319,23 @@ When the sources conflict, the owner-supplied product record remains authoritati
 - Source files, study records, model releases, and retouching disclosures for before-and-after or results imagery
 - Logo guidelines, official color values, alternate lockups, and favicon artwork
 
+## Purchase and checkout
+
+The owner confirmed on 2026-09-09 that this website is intended for selling and requested purchase and checkout options.
+
+- Homepage and site-wide header purchase links lead to `checkout.html`. The purchase link remains visible on mobile.
+- Checkout currently reviews **one SM-2309 mask**. It does not offer unconfirmed color variants, quantities, or accessories.
+- The owner requested Razorpay integration. Checkout now uses a Node server and Razorpay Standard Checkout; the previous public hosted-link configuration has been replaced with private environment settings.
+- Prices and charges are server-controlled integer paise. Unknown amounts remain blank, and payment stays unavailable until credentials, amounts, a delivery country, and the explicit checkout-enabled setting are supplied.
+- The delivery form stores customer contact/address details in a private order record. Card and payment credentials are entered in Razorpay. Server-side signature and capture checks are required before a purchase is shown as confirmed; signed webhooks recover payments when the browser callback is lost.
+- This version supports one mask, INR, and one confirmed delivery country with fixed shipping. These are implementation boundaries, not confirmation of price or availability. Stock, shipping regions and timing, returns, warranty, and discount terms still require owner confirmation.
+- See `RAZORPAY_SETUP.md` and `.env.example` for configuration, persistent hosting requirements, fulfilment, and testing. Merchant credentials and a real test-mode transaction are still pending. No price, shipping promise, discount amount, or availability was invented.
+
 ## Change log
+
+- **2026-09-09:** Integrated Razorpay Standard Checkout with server-side order creation, private delivery records, payment signature/capture verification, authenticated webhooks, and payment-status recovery. Added an environment template, Node startup command, setup documentation, and mocked payment integration tests. Live payment remains disabled until the owner supplies merchant and commercial settings.
+
+- **2026-09-09:** Added homepage and site-wide purchase links, retained the purchase action in mobile headers, and replaced the order-information placeholder with a checkout summary and configurable hosted-payment handoff. Payment remains unavailable pending confirmed commercial settings. Verified navigation and responsive layout at 320, 768, 1024, and 1440 pixels, plus unavailable/invalid configuration and a locally intercepted payment handoff; no live transaction was made.
 
 - **2026-09-05:** Rebuilt all five site pages around the approved image library; added a clean-product hero, interactive product gallery, light-option selector, product imagery on supporting pages, and the Instagram discount/QR call-to-action. Removed unconfirmed pricing, shipping, warranty, session-timing, wavelength, clinical, review, and before-and-after claims from the public pages. Added shared responsive styling, accessible navigation and controls, and optimized WebP image variants.
 - **2026-09-03:** Applied the SKINTRONICS identity across all five site pages: titles, favicon, header/footer logos, product naming, Instagram destination, copyright, supporting brand copy, and the interim logo-derived web palette.
