@@ -1,8 +1,8 @@
 # Site Content Source of Truth
 
 > Status: Active  
-> Last updated: 2026-09-09
-> Primary source: Chat record supplied by the site owner, dated 7/29 (year not provided)  
+> Last updated: 2026-09-21
+> Primary source: Owner response submitted through the product and pricing form on 2026-09-11
 > First-party asset source: `Skintroniks-20260903T124736Z-1-001/Skintroniks/`
 > Reference source: ProTouch Spectra Glow product page, accessed 2026-09-03  
 > Scope: Brand identity, approved product assets, product details, Instagram discount call-to-action, and external product-page reference
@@ -16,7 +16,7 @@ This file is the canonical source for product copy used across this website. Fut
 - Confirmed brand name and spelling: **SKINTRONICS**
 - Primary logo: [`SKINTRONICS_LOGO.png`](Skintroniks-20260903T124736Z-1-001/Skintroniks/SKINTRONICS_LOGO.png)
 - Instagram page: [@skintronics_](https://www.instagram.com/skintronics_?utm_source=qr&igsh=MXUxZ2Nwb2Y3emQxZg==)
-- Instagram CTA: **Follow the page for a discount.**
+- Instagram CTA: **Follow @skintronics_ and share the page with 10 friends to receive INR 1,500 off.** The offer runs all year.
 
 Use **SKINTRONICS** in customer-facing copy. “Skintroniks” is the downloaded folder spelling, not the approved brand spelling. The supplied logo is a 2085 x 1221 PNG with transparency and contains a butterfly/mask-style symbol above the SKINTRONICS wordmark.
 
@@ -25,51 +25,64 @@ Use **SKINTRONICS** in customer-facing copy. “Skintroniks” is the downloaded
 | Attribute | Approved source detail |
 | --- | --- |
 | Product model | SM-2309 |
-| LED output | 944 high-energy pulsed LED light beams |
-| LED construction | Supplier graphic states 118 sets of 8-color lights, 944 pieces total |
-| Light options | 7 visible-light modes plus infrared light |
-| Repair programs | 3 skin-repair modes |
-| Material | Soft latex |
-| Weight | Approximately 190 g |
+| LED output | 944 LEDs covering all eight light modes |
+| Light options | Blue, cyan, purple, green, white/anti-aging mixed, yellow, orange/amber, and red with near-infrared |
+| Intensity | 3 adjustable levels; the earlier “3 programs” wording means intensity levels |
+| Infrared control | Infrared can be turned on with each light mode |
+| Material | Latex and silicone |
+| Weight | 170 g |
 | Water resistance | IPX7 waterproof; sealed and easy to clean |
 | Battery | Built-in 2600 mAh lithium battery |
 | Controls | Controller with LED display |
 | Charging | Type-C charging interface |
 | Working voltage | 3.7 V |
 | Charging input | DC 5 V / 1 A |
+| Full charging time | Approximately 2 hours |
+| Battery runtime | Approximately 10 hours after a full charge |
+| Use while charging | Yes |
 | Product size | 324 x 213 x 4.3 mm |
+| Session length | 10–30 minutes |
+| Frequency | Up to 3 times a day, 7 days a week |
+| Available colour | Pink |
 | Treatment characteristic | Designed to deliver deep light penetration into skin layers |
 
 The supplied specification graphic prints “Rated voltage 4.7W.” Because watts measure power rather than voltage, do not publish or silently relabel this value until the manufacturer confirms whether it means **rated power: 4.7 W**.
 
-### Known specification conflicts
+### Resolved specification conflicts
 
-- **Weight:** the owner-supplied chat and two marketing images say approximately 190 g; the dedicated specification graphic says approximately 170 g. Continue using approximately 190 g only as the current owner-approved value, and request manufacturer confirmation.
-- **Material:** the owner-supplied chat says soft latex; the quick-use graphic refers to wiping the “silicone part.” Continue using soft latex only as the current owner-approved value, and request manufacturer confirmation, especially because allergen and skin-contact guidance depend on it.
-- **Emitter count terminology:** the specification graphic describes 118 sets of eight-color lights and 944 total pieces. Marketing graphics call these 944 pulse lights/light beams. Do not imply that 944 separate packages or independently positioned LEDs are visible without technical confirmation.
+- **Weight:** use 170 g. The 2026-09-11 owner response supersedes the earlier 190 g wording.
+- **Material:** use latex and silicone. The latest response confirms that both materials are present.
+- **Emitter count terminology:** use 944 LEDs covering all eight light modes.
+- **Programs:** replace “three repair programs” with “three adjustable intensity levels.”
 
 ## Light modes and source-stated benefits
 
-| Light | Source-stated purpose or benefit |
-| --- | --- |
-| Red | Boosts cell activity, supports skin repair, and improves skin tone |
-| Blue | Provides an antibacterial effect and helps reduce acne and oil |
-| Yellow | Helps improve rough skin and pigmentation |
-| Green | Helps control oil and reduce facial swelling |
-| Purple | Helps reduce the appearance of acne scars and supports skin repair |
-| Cyan | Enhances cellular energy and metabolism |
-| Orange | Helps relieve stress and improve lymphatic drainage |
-| Infrared | Helps improve blood circulation and reduce fine lines |
+| Light | Owner-supplied wavelength | Source-stated purpose or benefit |
+| --- | --- | --- |
+| Blue | Approximately 415 nm | Kills acne-causing bacteria and regulates oil production |
+| Cyan | Approximately 440–463 nm | Calms stressed skin and reduces inflammation |
+| Purple | Approximately 433–450 nm | Combines red and blue benefits to accelerate cell renewal and tissue repair |
+| Green | Approximately 505–532 nm | Fades hyperpigmentation, dark spots, and redness |
+| White / anti-aging mixed | Approximately 510–550 nm | Penetrates deeper to improve firmness and balance tone |
+| Yellow | Approximately 590 nm | Relieves redness, soothes sensitive skin, and supports lymphatic drainage |
+| Orange / amber | Approximately 600–605 nm | Revives dull skin and helps repair environmental or sun damage |
+| Red and near-infrared | 630–650 nm and 830–850 nm | Stimulates collagen and elastin production while supporting deeper cellular repair |
 
-The source says the light wavelengths are precise for healing, anti-aging effects, and the decomposition of melanin, but it does **not** provide wavelength values in nanometers.
+## Intensity levels
 
-## Skin-repair programs
+The three modes previously described as “programs” are three adjustable light-strength levels. The user can also turn on infrared with each light mode.
 
-| Program | Source-stated purpose or benefit |
-| --- | --- |
-| Mode 1 | Controls the skin's oil-water balance and supports skin repair |
-| Mode 2 | Reduces melanin and improves acne |
-| Mode 3 | Repairs wrinkles and supports anti-aging goals |
+## Package and commercial details
+
+- Box contents: light face mask, charging cable, remote, three fastening straps, and instruction booklet
+- Stock: available now in pink
+- Selling price: INR 7,999, including GST/tax
+- MRP/original price: INR 14,999
+- Shipping: free across India
+- Warranty: replacement for up to six months when there is a factory fault
+- Instagram offer: INR 1,500 off for customers who follow @skintronics_ and share the page with 10 friends; available all year
+- Multiple purchases: allowed; orders of more than three masks receive an additional INR 500 discount per mask
+- All product colours use the same price; pink is the currently available colour
 
 ## Overall source-stated outcomes
 
@@ -280,14 +293,14 @@ Do not reuse these prices, offers, warranty terms, endorsements, or results time
 
 | Area | Owner-supplied product record | ProTouch reference product |
 | --- | --- | --- |
-| Light output | 944 high-energy pulsed light beams | 210 LEDs |
-| Visible colors | Red, blue, yellow, green, purple, cyan, orange | Red, blue, green, yellow, purple, cyan, white |
-| Additional light | Infrared | None listed separately |
-| Material | Soft latex | Silicone |
-| Weight | Approximately 190 g | Approximately 145 g |
+| Light output | 944 LEDs covering all eight light modes | 210 LEDs |
+| Visible colors | Blue, cyan, purple, green, white mixed, yellow, orange/amber, and red | Red, blue, green, yellow, purple, cyan, white |
+| Additional light | Near-infrared; can be enabled with each light | None listed separately |
+| Material | Latex and silicone | Silicone |
+| Weight | 170 g | Approximately 145 g |
 | Water resistance | IPX7 | Not stated in the reviewed page copy |
 | Battery | Built-in 2600 mAh lithium battery | Capacity not stated in the reviewed page copy |
-| Programs | 3 skin-repair modes | 5 adjustable intensity levels |
+| Intensity | 3 adjustable levels | 5 adjustable levels |
 
 When the sources conflict, the owner-supplied product record remains authoritative for our product. ProTouch details must stay labeled as reference material.
 
@@ -295,25 +308,20 @@ When the sources conflict, the owner-supplied product record remains authoritati
 
 - Prefer qualified wording such as **helps**, **supports**, **designed to**, and **may improve**.
 - Do not present the product as diagnosing, treating, curing, or preventing a medical condition.
-- Do not invent or publish precise wavelengths, study results, efficacy percentages, timelines, safety certifications, clinician endorsements, or regulatory approvals.
-- Do not change **soft latex** to silicone or **944 light beams** to another LED count without a newer authoritative source.
+- Do not invent study results, efficacy percentages, safety certifications, clinician endorsements, or regulatory approvals.
+- Use the owner-confirmed wavelength ranges, 170 g weight, latex-and-silicone wording, and 944-LED description recorded above.
 - Do not claim the product is medical-grade, clinically proven, dermatologist tested, UV-free, or FDA approved unless supporting evidence is supplied.
-- Do not add a price, discount amount, shipping promise, returns period, warranty, review count, star rating, session duration, or box contents unless confirmed separately.
+- Use the owner-confirmed price, discounts, India-wide free shipping, warranty, session duration, frequency, and box contents recorded above. Returns remain unconfirmed.
 - Avoid absolute promises. Results can vary by user and routine.
 
 ## Details still needed from the owner
 
-- Confirmed customer-facing product name: “Photon Skin Rejuvenation Mask” versus the graphic's “Photon Rejuvenation Device”; supplier model SM-2309 is now recorded
-- Exact wavelengths for all eight light options
-- Manufacturer confirmation of the preferred emitter terminology for 118 eight-color sets / 944 total light elements
-- Resolution of the approximately 190 g versus approximately 170 g weight conflict
-- Resolution of soft latex versus silicone material wording, including allergen and skin-contact safety information
-- Recommended session length, frequency, and operating instructions
 - Contraindications, eye-safety guidance, warnings, and intended-user restrictions
-- Battery runtime and full charging time
-- Confirmation that the pictured rose-gold/pink and black versions are both available for sale
-- Included accessories and package contents
-- Price, currency, discount mechanics, shipping regions, returns, and warranty
+- Exact cleaning products and care instructions
+- Returns, exchanges, and refund terms
+- How Instagram-follow/share eligibility is checked and how the discount is applied at checkout
+- Whether the Instagram discount can be combined with the bulk discount
+- Delivery timing and supported locations outside India
 - Documents supporting the displayed CE, RoHS, PSE, and MSDS claims
 - Evidence supporting clinical, medical, safety, and performance claims
 - Source files, study records, model releases, and retouching disclosures for before-and-after or results imagery
@@ -324,16 +332,18 @@ When the sources conflict, the owner-supplied product record remains authoritati
 The owner confirmed on 2026-09-09 that this website is intended for selling and requested purchase and checkout options.
 
 - Homepage and site-wide header purchase links lead to `checkout.html`. The purchase link remains visible on mobile.
-- Checkout currently reviews **one SM-2309 mask**. It does not offer unconfirmed color variants, quantities, or accessories.
+- Checkout currently reviews **one pink SM-2309 mask**. Multiple-mask orders are directed to SKINTRONICS while quantity and discount handling remain outside the online checkout.
 - The owner requested Razorpay integration. Checkout now uses a Node server and Razorpay Standard Checkout; the previous public hosted-link configuration has been replaced with private environment settings.
-- Prices and charges are server-controlled integer paise. Unknown amounts remain blank, and payment stays unavailable until credentials, amounts, a delivery country, and the explicit checkout-enabled setting are supplied.
+- Prices and charges are server-controlled integer paise. The confirmed defaults are INR 7,999, free India-wide shipping, and no additional tax because GST is included. Payment stays unavailable until Razorpay credentials and the explicit checkout-enabled setting are supplied.
 - The delivery form stores customer contact/address details in a private order record. Card and payment credentials are entered in Razorpay. Server-side signature and capture checks are required before a purchase is shown as confirmed; signed webhooks recover payments when the browser callback is lost.
-- This version supports one mask, INR, and one confirmed delivery country with fixed shipping. These are implementation boundaries, not confirmation of price or availability. Stock, shipping regions and timing, returns, warranty, and discount terms still require owner confirmation.
+- This version supports one mask, INR, and India-wide free shipping. Stock, price, GST inclusion, warranty, and discount amounts are owner-confirmed; delivery timing, returns, and automated discount verification remain outstanding.
 - See `RAZORPAY_SETUP.md` and `.env.example` for configuration, persistent hosting requirements, fulfilment, and testing. Merchant credentials and a real test-mode transaction are still pending. No price, shipping promise, discount amount, or availability was invented.
 
 ## Change log
 
-- **2026-09-09:** Integrated Razorpay Standard Checkout with server-side order creation, private delivery records, payment signature/capture verification, authenticated webhooks, and payment-status recovery. Added an environment template, Node startup command, setup documentation, and mocked payment integration tests. Live payment remains disabled until the owner supplies merchant and commercial settings.
+- **2026-09-21:** Applied all product and pricing answers from the 2026-09-11 owner response: product name, model, materials, weight, wavelengths and light descriptions, 944 LEDs, three intensity levels, usage frequency, charging and runtime, colour and stock, box contents, warranty, INR 7,999 price including GST, INR 14,999 MRP, free India-wide shipping, Instagram offer, and bulk-order discount. Updated public pages, checkout defaults, environment template, and payment setup notes. Live payment remains disabled until Razorpay credentials and fulfilment are ready.
+
+- **2026-09-09:** Integrated Razorpay Standard Checkout with server-side order creation, private delivery records, payment signature/capture verification, authenticated webhooks, and payment-status recovery. Added an environment template, Node startup command, setup documentation, and mocked payment integration tests. Live payment remains disabled until the owner supplies merchant credentials.
 
 - **2026-09-09:** Added homepage and site-wide purchase links, retained the purchase action in mobile headers, and replaced the order-information placeholder with a checkout summary and configurable hosted-payment handoff. Payment remains unavailable pending confirmed commercial settings. Verified navigation and responsive layout at 320, 768, 1024, and 1440 pixels, plus unavailable/invalid configuration and a locally intercepted payment handoff; no live transaction was made.
 

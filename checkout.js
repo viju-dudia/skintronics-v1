@@ -83,7 +83,7 @@
         } else {
             status.textContent = settings.enabled
                 ? (order.state === 'created' ? 'Your order is ready. Continue with Razorpay to complete payment.' : 'Enter your delivery details, then pay using Razorpay.')
-                : 'Online payment is not available yet. Contact SKINTRONICS for purchase details.';
+                : 'Online payment is not available yet. Contact SKINTRONICS to place an order or claim a discount.';
         }
     }
 

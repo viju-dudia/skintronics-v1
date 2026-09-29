@@ -117,6 +117,20 @@
     overflow-wrap: anywhere;
 }
 
+.checkout-mrp {
+    color: var(--muted);
+    text-decoration: line-through;
+}
+
+.checkout-offer {
+    margin: 1.5rem 0 0;
+    padding: 0.9rem 1rem;
+    border-left: 3px solid var(--brand-500);
+    background: var(--brand-50);
+    color: var(--brand-900);
+    font-size: 0.82rem;
+}
+
 .checkout-totals .checkout-total {
     margin-top: 0.75rem;
     border-top: 1px solid var(--line);

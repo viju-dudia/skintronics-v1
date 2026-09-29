@@ -7,8 +7,8 @@ The site now uses Razorpay Standard Checkout. A Node.js server creates the Razor
 1. Use Node.js 24 or newer. There are no third-party server dependencies to install.
 2. Copy `.env.example` to `.env` locally. This file is ignored by Git. Keep all secrets in `.env` or your hosting provider's secret settings, never in HTML, browser JavaScript, or chat.
 3. Generate **test** API keys in your Razorpay dashboard. Set `RAZORPAY_KEY_ID` and `RAZORPAY_KEY_SECRET`.
-4. Confirm the mask's selling price, shipping charge, additional tax, stock availability, and delivery country. Set the amounts as **integer paise** in `PRODUCT_PRICE_PAISE`, `SHIPPING_PAISE`, and `TAX_PAISE`. Use zero only for a confirmed zero additional charge. An unknown amount must stay blank.
-5. Set `SHIPPING_COUNTRY` to the confirmed two-letter country code. This version sells one SM-2309 mask in INR with a fixed shipping charge for that country. Destination-dependent rates, multiple quantities, other currencies, and discounts require additional implementation and confirmed business rules.
+4. The owner-confirmed price is INR 7,999 including GST, with free shipping across India. The supplied defaults therefore use `PRODUCT_PRICE_PAISE=799900`, `SHIPPING_PAISE=0`, `TAX_PAISE=0`, and `SHIPPING_COUNTRY=IN`.
+5. This checkout processes one SM-2309 mask per order. Multiple-mask orders and the Instagram or bulk discounts are handled directly by SKINTRONICS until their verification and checkout rules are implemented.
 6. Set `CHECKOUT_ENABLED=true` when those details are ready, then run `npm start`.
 7. Open [local checkout](http://127.0.0.1:4173/checkout.html). Test mode is visibly labelled and never represented as a real purchase.
 

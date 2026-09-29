@@ -337,6 +337,32 @@ h3 {
     max-width: 33rem;
 }
 
+.product-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.65rem;
+    margin: 1.5rem 0 0;
+    color: var(--brand-900);
+    font-variant-numeric: tabular-nums;
+}
+
+.product-price span {
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-decoration: line-through;
+}
+
+.product-price strong {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.product-price small {
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
