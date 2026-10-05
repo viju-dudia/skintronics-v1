@@ -22,7 +22,7 @@
         } catch {throw new Error('The connection was interrupted. Refresh the order before repeating an action.');}
         if (raw&&response.ok) return response;
         let data;
-        try {data=await response.json();}catch {throw new Error('Your session may have expired. Reload this page to sign in again.');}
+        try {data=await response.json();}catch {throw new Error([404,405,501].includes(response.status)?'The admin backend is not available on this website. Deploy the Cloudflare Worker with D1 and Cloudflare Access to manage orders.':'Your session may have expired. Reload this page to sign in again.');}
         if (!response.ok) {const error=new Error(data.error||'The request could not be completed.');error.status=response.status;throw error;}
         return data;
     }
@@ -135,6 +135,12 @@
         catch(error){message(error.message);}finally{$('#export').disabled=false;}
     });
     async function initialize(){
+        if(location.hostname.endsWith('.github.io')){
+            $('#identity').textContent='Backend not connected';$('.sidebar-bottom a').hidden=true;
+            $('#access-title').textContent='Admin setup required';$('#access-panel').hidden=false;
+            $('#access-message').textContent='This website is hosted on GitHub Pages, which serves the storefront but cannot run the admin backend. To manage real orders, deploy the Cloudflare Worker and configure D1 and Cloudflare Access. Then open /admin on your Cloudflare domain. The local preview is available on the computer running it.';
+            $('#retry-access').hidden=true;$('#refresh-list').disabled=true;return;
+        }
         $('#retry-access').disabled=true;
         try{
             session=await request('/api/admin/session');$('#identity').textContent=session.email;

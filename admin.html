@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow">
     <title>Orders · SKINTRONICS</title>
-    <link rel="stylesheet" href="/admin.css">
-    <script src="/admin.js" defer></script>
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to orders</a>
     <aside class="sidebar">
-        <a class="brand" href="/" aria-label="SKINTRONICS storefront">SKINTRONICS<span>Store operations</span></a>
+        <a class="brand" href="index.html" aria-label="SKINTRONICS storefront">SKINTRONICS<span>Store operations</span></a>
         <nav aria-label="Admin navigation">
             <button class="nav-item active" id="nav-orders" type="button"><span aria-hidden="true">▤</span> Orders</button>
-            <a class="nav-item" href="/" target="_blank" rel="noopener"><span aria-hidden="true">↗</span> Open storefront</a>
+            <a class="nav-item" href="index.html" target="_blank" rel="noopener"><span aria-hidden="true">↗</span> Open storefront</a>
         </nav>
         <div class="sidebar-bottom"><span class="identity" id="identity">Verifying access…</span><a href="/cdn-cgi/access/logout">Sign out</a></div>
     </aside>
@@ -22,7 +22,7 @@
         <div class="preview-banner" id="preview-banner" hidden>Local preview · Fictional orders only. No emails or real refunds are sent.</div>
         <header class="page-header"><div><h1>Orders</h1><p>From confirmed payment to your customer’s door.</p></div><button type="button" id="refresh-list" class="button secondary">Refresh orders</button></header>
         <p id="message" class="message" role="status" aria-live="polite" hidden></p>
-        <section class="access-panel" id="access-panel" hidden><h2>Admin access required</h2><p id="access-message"></p><button id="retry-access" class="button" type="button">Check access again</button></section>
+        <section class="access-panel" id="access-panel" hidden><h2 id="access-title">Admin access required</h2><p id="access-message"></p><button id="retry-access" class="button" type="button">Check access again</button></section>
         <div id="workspace" hidden>
             <section class="metrics" aria-label="Order overview">
                 <div><span>Awaiting dispatch</span><strong id="metric-awaiting">—</strong></div>

@@ -2,6 +2,8 @@
 
 The implementation uses Workers Static Assets for the storefront and `/admin`, a Worker for all APIs, D1 for durable orders, Cloudflare Access for owner identity, and scheduled jobs for payment/refund reconciliation and queued emails. The existing Node server remains available for the original file-based checkout; it does not provide the new admin API. Use the Cloudflare commands for the complete application.
 
+GitHub Pages can display the admin shell, but cannot run its backend or manage orders. On a `github.io` domain the page displays a setup message. Production access is `https://YOUR-CLOUDFLARE-DOMAIN/admin` after completing the configuration below. The loopback preview URL works only on the computer running the preview, not on a separate phone.
+
 ## Local preview
 
 Use Node 24 or newer and run `npm run preview:admin`, then open `http://127.0.0.1:4174/admin`. This is a loopback-only fixture preview with fictional test orders, simulated refunds and no email delivery. It uses an in-memory SQLite database that resets on restart. Its injected identity and permission to simulate test fulfilment exist only in the preview script; the production Worker has no environment-variable authentication bypass.

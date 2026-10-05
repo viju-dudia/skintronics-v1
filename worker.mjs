@@ -72,6 +72,7 @@ export function createWorker({ authorize=authorizeAdmin, gatewayFactory=createRa
                 if (adminPaths.has(path)) {
                     // The shell contains no customer data. API requests always require a validated identity.
                     if (!['GET','HEAD'].includes(request.method)) throw new CheckoutError(405,'Method not allowed.');
+                    if (path==='/admin/') return new Response(null,{status:308,headers:{Location:'/admin','Cache-Control':'no-store'}});
                     const assetURL=new URL(path==='/admin'||path==='/admin/'?'/admin.html':path,url);
                     const asset=await env.ASSETS.fetch(new Request(assetURL,{method:request.method}));
                     const headers=new Headers(asset.headers);
