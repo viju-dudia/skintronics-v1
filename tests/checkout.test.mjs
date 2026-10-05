@@ -27,6 +27,7 @@ async function fixture(t, overrides = {}) {
     const state = { orders: [], payment: null, fail: false };
     const gateway = async (path, body) => {
         if (state.fail) throw new CheckoutError(502, 'Gateway temporarily unavailable');
+        if (path.startsWith('/orders?receipt=')) return { items: state.orders.filter((order) => order.receipt === new URL(path,'https://example.test').searchParams.get('receipt')) };
         if (path === '/orders' && body) {
             const order = { ...body, id: `order_Test${state.orders.length + 1}` };
             state.orders.push(order);
@@ -184,12 +185,12 @@ test('cross-site requests, forged sessions, reset of unpaid orders, and private-
     assert.equal((await fetch(`${f.base}/assets/product-front-480.webp`)).status, 200);
 });
 
-test('gateway errors keep the session retryable and do not record a paid order', async (t) => {
+test('ambiguous order creation errors hold the session for recovery and never create a second order', async (t) => {
     const f = await fixture(t);
     f.state.fail = true;
     assert.equal((await f.create()).status, 502);
-    assert.equal((await (await f.request('/api/razorpay/status')).json()).state, 'new');
+    assert.equal((await f.request('/api/razorpay/status')).status, 502);
     f.state.fail = false;
-    assert.equal((await f.create()).status, 200);
-    assert.equal(f.state.orders.length, 1);
+    assert.equal((await f.create()).status, 409);
+    assert.equal(f.state.orders.length, 0);
 });

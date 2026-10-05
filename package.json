@@ -2,9 +2,19 @@
   "name": "skintronics-storefront",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=24" },
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "start": "node --env-file-if-exists=.env server.mjs",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "test:cloudflare": "node scripts/build-cloudflare.mjs && wrangler deploy --dry-run --outdir .cloudflare/worker && node --test tests/cloudflare-runtime.mjs",
+    "build:cloudflare": "node scripts/build-cloudflare.mjs",
+    "dev:cloudflare": "node scripts/build-cloudflare.mjs && wrangler dev",
+    "deploy:cloudflare": "node scripts/build-cloudflare.mjs && wrangler deploy",
+    "preview:admin": "node scripts/preview-admin.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.147.0"
   }
 }

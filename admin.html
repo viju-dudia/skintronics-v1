@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Orders · SKINTRONICS</title>
+    <link rel="stylesheet" href="/admin.css">
+    <script src="/admin.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to orders</a>
+    <aside class="sidebar">
+        <a class="brand" href="/" aria-label="SKINTRONICS storefront">SKINTRONICS<span>Store operations</span></a>
+        <nav aria-label="Admin navigation">
+            <button class="nav-item active" id="nav-orders" type="button"><span aria-hidden="true">▤</span> Orders</button>
+            <a class="nav-item" href="/" target="_blank" rel="noopener"><span aria-hidden="true">↗</span> Open storefront</a>
+        </nav>
+        <div class="sidebar-bottom"><span class="identity" id="identity">Verifying access…</span><a href="/cdn-cgi/access/logout">Sign out</a></div>
+    </aside>
+    <main id="main">
+        <div class="preview-banner" id="preview-banner" hidden>Local preview · Fictional orders only. No emails or real refunds are sent.</div>
+        <header class="page-header"><div><h1>Orders</h1><p>From confirmed payment to your customer’s door.</p></div><button type="button" id="refresh-list" class="button secondary">Refresh orders</button></header>
+        <p id="message" class="message" role="status" aria-live="polite" hidden></p>
+        <section class="access-panel" id="access-panel" hidden><h2>Admin access required</h2><p id="access-message"></p><button id="retry-access" class="button" type="button">Check access again</button></section>
+        <div id="workspace" hidden>
+            <section class="metrics" aria-label="Order overview">
+                <div><span>Awaiting dispatch</span><strong id="metric-awaiting">—</strong></div>
+                <div><span>In transit</span><strong id="metric-shipped">—</strong></div>
+                <div><span>Captured payments</span><strong id="metric-captured">—</strong></div>
+                <div><span>Processed refunds</span><strong id="metric-refunded">—</strong></div>
+            </section>
+            <section class="queue" aria-labelledby="queue-title">
+                <div class="queue-heading"><div><h2 id="queue-title">Order queue</h2><p id="queue-description">Live orders across all dates</p></div><div class="queue-actions"><label class="mode-label">Orders <select id="mode"><option value="live">Live</option><option value="test">Test</option></select></label><button class="button secondary" type="button" id="export">Export CSV</button></div></div>
+                <form id="filters" class="filters">
+                    <label class="search-field"><span>Search orders</span><input id="search" type="search" placeholder="Name, phone, reference or payment ID" maxlength="200"></label>
+                    <label><span>Payment</span><select id="payment-filter"><option value="">All payments</option><option value="paid">Paid</option><option value="pending">Pending capture</option><option value="created">Awaiting payment</option><option value="creating">Checking order</option></select></label>
+                    <label><span>Fulfilment</span><select id="fulfilment-filter"><option value="">All stages</option><option value="awaiting">Awaiting fulfilment</option><option value="processing">Processing</option><option value="shipped">Shipped</option><option value="delivered">Delivered</option><option value="cancelled">Cancelled</option><option value="returned">Returned</option></select></label>
+                    <label><span>From (UTC)</span><input id="date-from" type="date"></label>
+                    <label><span>To (UTC)</span><input id="date-to" type="date"></label>
+                    <button class="button" type="submit">Apply</button>
+                </form>
+                <div class="table-wrap"><table><thead><tr><th scope="col">Order</th><th scope="col">Customer</th><th scope="col">Amount</th><th scope="col">Payment</th><th scope="col">Fulfilment</th><th scope="col"><span class="sr-only">Open order</span></th></tr></thead><tbody id="orders-body"></tbody></table></div>
+                <div class="empty-state" id="empty-state" hidden><h3>No orders here yet</h3><p>Confirmed orders will appear here. Try changing the filters or switching order mode.</p></div>
+                <footer class="pagination"><span id="count-label">Loading orders…</span><div><button type="button" id="previous" class="button secondary">Previous</button><span id="page-label"></span><button type="button" id="next" class="button secondary">Next</button></div></footer>
+            </section>
+            <p class="footnote" id="email-note">Checking notification setup…</p>
+        </div>
+    </main>
+    <dialog id="order-dialog" aria-labelledby="detail-title">
+        <header class="detail-header"><div><span class="detail-label">Order details</span><h2 id="detail-title"></h2></div><button class="icon-button" type="button" id="close-detail" aria-label="Close order details">×</button></header>
+        <div class="detail-body"><p id="detail-message" class="message" role="status" aria-live="polite" hidden></p><div id="detail-content"></div></div>
+    </dialog>
+    <dialog id="refund-confirm" aria-labelledby="refund-title"><div class="confirm-body"><h2 id="refund-title">Confirm refund</h2><p id="refund-confirm-text"></p><p>The refund goes to the customer’s original payment method. Review the amount before confirming.</p><div class="confirm-actions"><button class="button secondary" id="cancel-refund" type="button">Go back</button><button class="button danger" id="confirm-refund" type="button">Confirm refund</button></div></div></dialog>
+</body>
+</html>

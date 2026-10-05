@@ -1,0 +1,54 @@
+# SKINTRONICS admin and Cloudflare deployment
+
+The implementation uses Workers Static Assets for the storefront and `/admin`, a Worker for all APIs, D1 for durable orders, Cloudflare Access for owner identity, and scheduled jobs for payment/refund reconciliation and queued emails. The existing Node server remains available for the original file-based checkout; it does not provide the new admin API. Use the Cloudflare commands for the complete application.
+
+## Local preview
+
+Use Node 24 or newer and run `npm run preview:admin`, then open `http://127.0.0.1:4174/admin`. This is a loopback-only fixture preview with fictional test orders, simulated refunds and no email delivery. It uses an in-memory SQLite database that resets on restart. Its injected identity and permission to simulate test fulfilment exist only in the preview script; the production Worker has no environment-variable authentication bypass.
+
+Run `npm test` for the checkout, D1 persistence, admin authorisation, shipment, refund timeout/retry, reconciliation, and notification tests. After installing development dependencies, run `pnpm run test:cloudflare` for a fresh dry build and an end-to-end test in Cloudflare's actual local runtime. Its network responses are fictional fixtures; it exercises real D1 and Access-signature validation without merchant transactions.
+
+## Cloudflare configuration
+
+1. Install development dependencies (`pnpm install --frozen-lockfile` is supported by the committed lockfile), then authenticate Wrangler locally using `pnpm exec wrangler login`.
+2. Create D1 with `pnpm exec wrangler d1 create skintronics-orders`. Put its returned `database_id` in `wrangler.jsonc`.
+3. Set `APP_ORIGIN` to your exact HTTPS domain and add the matching Workers custom-domain route. Keep `CHECKOUT_ENABLED=false` until account testing and published purchase terms are complete. Prices are INR 7,999, GST included, free India shipping, one SM-2309 per order.
+4. Apply the schema with `pnpm exec wrangler d1 migrations apply skintronics-orders --remote`. Use a separate D1 database, Access audience, and test API keys for staging. Never point a fixture preview or test deployment at production D1.
+5. Store `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`, and `RAZORPAY_WEBHOOK_SECRET` with `pnpm exec wrangler secret put NAME`. Do not put secrets in `vars`, browser code or Git. For local Wrangler development, use an ignored `.dev.vars` file, and apply D1 migrations with `--local`.
+6. Configure Cloudflare Access to protect `/admin`, `/admin/*`, `/admin.html`, and `/api/admin/*` on the production domain. Allow only your owner identity, preferably through an identity provider with MFA. Set `ACCESS_TEAM_DOMAIN` (for example `your-team.cloudflareaccess.com`), `ACCESS_AUD` (the application audience), and `ADMIN_EMAILS` (comma-separated owner emails) as Worker secrets. The Worker verifies RS256 signatures, issuer, audience, expiration and the allowlist on every admin API call. An email header alone is never trusted. If separate Access applications protect the API and page, use the same application audience for the API or adjust the configuration accordingly.
+7. Keep `/api/razorpay/webhook` and customer checkout routes outside the Access login policy. In Razorpay, subscribe to `payment.captured`, `order.paid`, `payment.authorized`, `payment.failed`, `refund.created`, `refund.processed`, and `refund.failed`. The webhook URL is `https://YOUR-DOMAIN/api/razorpay/webhook`. Configure automatic capture and the matching webhook secret.
+8. Run `pnpm run build:cloudflare` and `pnpm exec wrangler deploy --dry-run` to verify packaging, then deploy with `pnpm run deploy:cloudflare` when domain, Access, database and secrets are ready. Alternate `workers.dev` and preview URLs are disabled. The asset build copies only approved storefront/admin files and images; `.env`, customer records and source files are excluded. Worker routing also rejects private paths.
+
+Cloudflare Access policy must include both the base paths and descendants. Verify logged-out and unauthorised requests against the production domain before live launch. Admin API responses and exports use `Cache-Control: no-store`; configure any custom Cloudflare caching rules to respect this. Customer payment routes must not be cached either.
+
+## Order operations
+
+The order queue defaults to live orders. Test mode is an explicit filter. Search matches customer name, email, phone, order reference or payment ID; date filters use UTC. Overview metrics cover all dates in the selected mode, while the table and CSV use the selected filters. Captured payments are gross historical captures; processed refunds are shown separately. Payment attempts that fail do not permanently fail an order that can later be paid.
+
+Fulfilment proceeds from awaiting to processing, shipped, delivered and, when needed, returned. Awaiting/processing orders may be cancelled with a reason. Cancellation does not issue a refund. Courier, tracking number and a valid non-future dispatch date are required for shipped/delivered/returned records. Unpaid, test, fully refunded and uncertain-refund orders cannot be dispatched in production. Optimistic versions prevent stale admin edits; database leases with transactional write guards prevent expired workers from overwriting new updates. Checkout writes never replace fulfilment fields. Original delivery details remain unchanged; requested corrections can be recorded in internal notes. Dedicated address editing, inventory, courier labels and accounting invoices are not part of this release.
+
+New paid orders and shipment updates generate durable email jobs in the same database transaction. The order details view displays email state and failures. CSV exports neutralise spreadsheet formulas and are capped at 5,000 filtered orders.
+
+## Refunds
+
+Refund creation is owner-only and requires a review dialog showing customer, order, amount and reason. Normal refunds support full and partial amounts in integer paise. Every request is stored before the gateway call; the stored UUID is the `X-Refund-Idempotency` key. Browser session storage preserves an interrupted submission so a retry uses the exact same request. Never use a new request key to retry a timeout.
+
+Remaining refundable balance subtracts processed refunds and reserves pending/uncertain requests. The backend fetches existing refunds and verifies the original captured payment before creating a new refund. Refunds issued directly in Razorpay are imported during webhook delivery or payment-status refresh. Webhook signatures are validated against the raw body, then the current refund is fetched from the API. Duplicates do not add amounts or send duplicate jobs. A missing local payment returns a retryable error instead of silently losing its refund event.
+
+The UI distinguishes pending, processed, failed and uncertain refunds. “Processed” is Razorpay's status and does not promise the credit is already visible in a bank account. Cancellation and returns are separate from money movement. The integration creates no refunds automatically. On ambiguous gateway errors, the saved request remains reserved until its status is resolved using “Check / retry same refund”. Definitive API rejections mark the request failed and release its reservation; conflicts, rate limits, transport failures and server errors remain uncertain. Investigate repeated errors in Razorpay; do not manufacture a successful result in the database.
+
+## Notifications
+
+Email delivery uses Resend's HTTPS API. To enable it, verify your sending domain with Resend, then set `RESEND_API_KEY`, `EMAIL_FROM` and `OWNER_EMAIL` as Worker secrets. No account is provisioned automatically and no emails were sent during implementation. Test orders never queue email sends.
+
+The five-minute Cron Trigger checks up to eight eligible orders and processes up to eight email jobs per run. Checks rotate through unresolved orders and paid orders awaiting/undergoing fulfilment or returns, plus orders with unresolved refunds. Use “Check payment & refunds” for an immediate manual refresh; use Razorpay for exceptions and older completed-order refunds if a webhook was missed. Jobs use provider idempotency keys, retain identical payloads on retry, and stop after six failed attempts or before Resend's 24-hour key expiry. The UI shows when provider delivery needs review. Check provider logs before manually resending any failed job. This queue is designed for initial store volumes; raise bounded batch sizes and add monitoring if backlog grows.
+
+## Migration and recovery
+
+Before moving an existing live checkout, pause new purchases, allow in-flight payments to settle, back up the original private directory, and take a D1 Time Travel bookmark. Run `node scripts/export-legacy-orders.mjs PATH_TO_OLD_ORDER_DIRECTORY`; it writes private `.data/import/orders.sql` and a manifest. No export is generated if validation fails. Checkout IDs, session token hashes, price/address snapshots and payment IDs are preserved; imports do not overwrite existing IDs or send historical confirmation emails.
+
+Import with `pnpm exec wrangler d1 execute skintronics-orders --remote --file .data/import/orders.sql`. Re-running is safe for existing IDs. Compare row counts and live/test captured totals with the manifest and inspect representative records before switching traffic. This is a staged, idempotent import, not a cross-service transaction; leave checkout paused until verification finishes. Keep the old directory until the restore and traffic rollback procedure has been exercised. An application rollback alone does not roll back the database or reverse a refund.
+
+D1 Time Travel retention depends on your Cloudflare plan. Test a restore on staging and retain periodic private exports for longer-term recovery. Before launch, complete a real Razorpay test-mode payment, close the browser during confirmation, verify webhook recovery, try full/partial refunds, and check authenticated order handling and email delivery. Real merchant-account transactions and deployed Cloudflare Access remain unverified until you configure those accounts.
+
+Official references: [D1](https://developers.cloudflare.com/d1/), [D1 transactional batches](https://developers.cloudflare.com/d1/worker-api/d1-database/), [Access JWT validation](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/), [refund idempotency](https://razorpay.com/docs/api/refunds/normal-refunds-idempotent), [refund webhooks](https://razorpay.com/docs/payments/refunds/subscribe-to-webhooks/), [Resend idempotency](https://resend.com/docs/dashboard/emails/idempotency-keys).

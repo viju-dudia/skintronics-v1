@@ -1,5 +1,7 @@
 # Razorpay checkout
 
+For Cloudflare hosting and the new admin dashboard, use [ADMIN_SETUP.md](ADMIN_SETUP.md). The instructions below describe the original single-process Node/file-store checkout. Cloudflare deployment replaces that file store with D1 and provides admin order management, refund synchronisation and queued email delivery.
+
 The site now uses Razorpay Standard Checkout. A Node.js server creates the Razorpay order, stores the delivery address privately, verifies the payment signature, checks capture status, and records the confirmed payment. The browser cannot set the charged price.
 
 ## Local setup

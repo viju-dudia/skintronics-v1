@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "skintronics-store",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./.cloudflare/public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "skintronics-orders",
+    "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID",
+    "migrations_dir": "migrations"
+  }],
+  "triggers": { "crons": ["*/5 * * * *"] },
+  "vars": {
+    "CHECKOUT_ENABLED": "false",
+    "APP_ORIGIN": "https://REPLACE_WITH_YOUR_DOMAIN",
+    "CHECKOUT_CURRENCY": "INR",
+    "PRODUCT_PRICE_PAISE": "799900",
+    "SHIPPING_PAISE": "0",
+    "TAX_PAISE": "0",
+    "SHIPPING_COUNTRY": "IN"
+  }
+}

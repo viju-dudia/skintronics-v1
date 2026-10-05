@@ -341,6 +341,8 @@ The owner confirmed on 2026-09-09 that this website is intended for selling and 
 
 ## Change log
 
+- **2026-10-05:** Added the owner-requested admin dashboard and Cloudflare Workers/D1 backend: live/test order queues, fulfilment and tracking updates, internal notes, CSV export, Cloudflare Access identity validation, full/partial refund requests and synchronisation, durable email jobs, scheduled payment recovery, and a fixture preview. Added migration/deployment documentation in `ADMIN_SETUP.md` and verified the flow in Cloudflare's local runtime using fictional gateway responses. Production domain, D1 binding, Access policy, merchant secrets and email sender still require configuration; no production deployment, payment or email was performed.
+
 - **2026-09-21:** Applied all product and pricing answers from the 2026-09-11 owner response: product name, model, materials, weight, wavelengths and light descriptions, 944 LEDs, three intensity levels, usage frequency, charging and runtime, colour and stock, box contents, warranty, INR 7,999 price including GST, INR 14,999 MRP, free India-wide shipping, Instagram offer, and bulk-order discount. Updated public pages, checkout defaults, environment template, and payment setup notes. Live payment remains disabled until Razorpay credentials and fulfilment are ready.
 
 - **2026-09-09:** Integrated Razorpay Standard Checkout with server-side order creation, private delivery records, payment signature/capture verification, authenticated webhooks, and payment-status recovery. Added an environment template, Node startup command, setup documentation, and mocked payment integration tests. Live payment remains disabled until the owner supplies merchant credentials.
