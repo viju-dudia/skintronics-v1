@@ -7,7 +7,7 @@ import { createAdminService, ordersCSV } from './lib/admin-service.mjs';
 import { sendNotifications } from './lib/notifications.mjs';
 
 const publicPaths=new Set(['/','/index.html','/checkout.html','/science.html','/results.html','/how-to-use.html','/styles.css','/checkout.css','/site.js','/checkout.js']);
-const adminPaths=new Set(['/admin','/admin/','/admin.html','/admin.css','/admin.js']);
+const adminPaths=new Set(['/admin','/admin/','/admin.html','/admin.css','/admin.js','/admin-demo.js']);
 const json=(value,status=200,headers={})=>Response.json(value,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...headers}});
 async function bodyBytes(request,max=16384) {
     if (Number(request.headers.get('content-length'))>max) throw new CheckoutError(413,'Request is too large.');

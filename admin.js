@@ -1,4 +1,12 @@
 (() => {
+    // TEMPORARY PREVIEW: set this to false before live production deployment.
+    // This skips login only for fictional, read-only demo data. Enable Cloudflare Access
+    // and configure the Worker before using real orders; server authentication stays required.
+    const TEMPORARY_STATIC_PREVIEW=true;
+    const githubPages=location.hostname.endsWith('.github.io');
+    const localDemo=['localhost','127.0.0.1'].includes(location.hostname)&&new URLSearchParams(location.search).get('preview')==='demo';
+    const staticPreview=TEMPORARY_STATIC_PREVIEW&&(githubPages||localDemo);
+    const demo=staticPreview?import('./admin-demo.js'):null;
     const $=(selector)=>document.querySelector(selector);
     const escape=(value)=>String(value??'').replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const money=(value)=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:2}).format((value||0)/100);
@@ -15,6 +23,7 @@
         const target=$(detail?'#detail-message':'#message');target.textContent=text;target.className=`message ${type}`;target.hidden=!text;
     }
     async function request(path,body,raw=false) {
+        if(staticPreview)return (await demo).demoRequest(path,body,raw);
         let response;
         try {
             response=await fetch(path,{method:body===undefined?'GET':'POST',credentials:'same-origin',cache:'no-store',
@@ -91,6 +100,10 @@
         });
         document.querySelectorAll('[data-retry-refund]').forEach((button)=>button.addEventListener('click',()=>act('retry-refund',{requestId:button.dataset.retryRefund},'Refund status checked.')));
         $('#retry-browser-refund')?.addEventListener('click',()=>act('refunds',unconfirmed,'Refund request checked.'));
+        if(session.readOnly){
+            $('#detail-content').querySelectorAll('button,input,select,textarea').forEach((element)=>element.disabled=true);
+            message('Demo order · Changes and refunds are disabled.','',true);
+        }
     }
     async function openOrder(id) {
         const revision=++detailRevision;current=null;message('','error',true);
@@ -135,7 +148,7 @@
         catch(error){message(error.message);}finally{$('#export').disabled=false;}
     });
     async function initialize(){
-        if(location.hostname.endsWith('.github.io')){
+        if(githubPages&&!staticPreview){
             $('#identity').textContent='Backend not connected';$('.sidebar-bottom a').hidden=true;
             $('#access-title').textContent='Admin setup required';$('#access-panel').hidden=false;
             $('#access-message').textContent='This website is hosted on GitHub Pages, which serves the storefront but cannot run the admin backend. To manage real orders, deploy the Cloudflare Worker and configure D1 and Cloudflare Access. Then open /admin on your Cloudflare domain. The local preview is available on the computer running it.';
@@ -145,7 +158,8 @@
         try{
             session=await request('/api/admin/session');$('#identity').textContent=session.email;
             $('#preview-banner').hidden=!session.preview;if(session.preview){$('#mode').value='test';$('.sidebar-bottom a').hidden=true;}
-            $('#email-note').textContent=session.preview?'Preview uses fictional records. Changes are reset when the preview server restarts.':session.notificationsConfigured?'Email notifications are queued automatically and sent by scheduled jobs.':'Email sending is not configured. Notification jobs are saved until an email provider is connected.';
+            if(session.readOnly)$('#preview-banner').textContent='Demo preview · Sample orders only. Changes, refunds and emails are disabled.';
+            $('#email-note').textContent=session.readOnly?'Sample data for viewing the dashboard. Connect Cloudflare to manage real orders.':session.preview?'Preview uses fictional records. Changes are reset when the preview server restarts.':session.notificationsConfigured?'Email notifications are queued automatically and sent by scheduled jobs.':'Email sending is not configured. Notification jobs are saved until an email provider is connected.';
             $('#workspace').hidden=false;$('#access-panel').hidden=true;await loadOrders();
         }catch(error){session=null;$('#identity').textContent='Access required';$('#workspace').hidden=true;$('#access-panel').hidden=false;$('#access-message').textContent=error.message;}
         finally{$('#retry-access').disabled=false;}
