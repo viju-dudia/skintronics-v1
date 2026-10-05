@@ -1144,6 +1144,64 @@ h3 {
     }
 }
 
+/* Keep the product, price, and action together on narrow screens. */
+@media (max-width: 640px) {
+    .home-hero {
+        padding: 1.25rem 1rem 1.75rem;
+        gap: 0.75rem;
+        background: var(--brand-50);
+    }
+
+    .home-hero .hero-copy {
+        display: contents;
+    }
+
+    .home-hero .eyebrow {
+        grid-row: 1;
+        margin: 0;
+        font-size: 0.65rem;
+    }
+
+    .home-hero h1 {
+        grid-row: 2;
+        margin: 0;
+        font-size: clamp(2rem, 8.5vw, 3rem);
+        line-height: 1.08;
+    }
+
+    .home-hero .hero-media {
+        grid-row: 3;
+        min-height: 0;
+        height: clamp(12rem, 55vw, 17rem);
+    }
+
+    .home-hero .hero-media img {
+        object-fit: contain;
+    }
+
+    .home-hero .lede {
+        grid-row: 4;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    .home-hero .product-price {
+        grid-row: 5;
+        margin: 0;
+    }
+
+    .home-hero .hero-actions {
+        grid-row: 6;
+        margin: 0;
+        gap: 0.5rem;
+    }
+
+    .home-hero .hero-note {
+        grid-row: 7;
+        margin: 0;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
