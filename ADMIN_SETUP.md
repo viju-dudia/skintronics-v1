@@ -1,5 +1,7 @@
 # SKINTRONICS admin and Cloudflare deployment
 
+The initial storefront now uses direct UPI payments with manual confirmation. See [UPI_SETUP.md](UPI_SETUP.md). Those purchases do not automatically create records in this Razorpay-based dashboard. This guide describes the retained backend for a future phase.
+
 The implementation uses Workers Static Assets for the storefront and `/admin`, a Worker for all APIs, D1 for durable orders, Cloudflare Access for owner identity, and scheduled jobs for payment/refund reconciliation and queued emails. The existing Node server remains available for the original file-based checkout; it does not provide the new admin API. Use the Cloudflare commands for the complete application.
 
 GitHub Pages can display the admin shell, but cannot run its backend or manage orders. A temporary `TEMPORARY_STATIC_PREVIEW=true` switch in `admin.js` currently displays fictional, read-only demo orders on `github.io`; it makes no admin API calls and sends no emails or refunds. **Set this switch to false before live production deployment and configure Cloudflare Access.** Other production domains always use the authenticated Worker API. To check the same static demo locally, use `http://127.0.0.1:4174/admin?preview=demo`. Production access is `https://YOUR-CLOUDFLARE-DOMAIN/admin` after completing the configuration below. The loopback preview URL works only on the computer running the preview, not on a separate phone.

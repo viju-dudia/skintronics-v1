@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Review your SKINTRONICS Photon Skin Rejuvenation Mask purchase and continue to checkout.">
+    <meta name="description" content="Review your SKINTRONICS Photon Skin Rejuvenation Mask purchase and pay by UPI.">
     <title>Checkout | SKINTRONICS</title>
     <link rel="icon" type="image/png" href="Skintroniks-20260903T124736Z-1-001/Skintroniks/SKINTRONICS_LOGO.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
                 <div class="checkout-heading">
                     <p class="eyebrow">Your SKINTRONICS purchase</p>
                     <h1 id="order-title">Checkout</h1>
-                    <p class="lede">Review your mask before continuing to payment.</p>
+                    <p class="lede">Review your mask and pay directly by UPI.</p>
                 </div>
                 <div class="checkout-layout">
                     <div class="checkout-details">
@@ -50,28 +50,32 @@
                             <a class="checkout-text-link" href="index.html#product-gallery">View product details</a>
                         </div>
                     </div>
-                    <form class="checkout-form" id="delivery-form" hidden>
-                        <h2>Delivery details</h2>
-                        <p class="checkout-status" data-delivery-note>We’ll use these details to deliver your order. Payment details are entered in Razorpay.</p>
-                        <fieldset disabled>
-                            <legend class="sr-only">Contact and delivery address</legend>
-                            <div class="checkout-fields">
-                                <label class="checkout-field checkout-field--wide">Full name<input name="name" autocomplete="shipping name" maxlength="100" required></label>
-                                <label class="checkout-field">Email address<input name="email" type="email" autocomplete="email" spellcheck="false" maxlength="254" required></label>
-                                <label class="checkout-field">Phone with country code<input name="phone" type="tel" autocomplete="tel" maxlength="25" required></label>
-                                <label class="checkout-field checkout-field--wide">Street address<input name="address" autocomplete="shipping address-line1" maxlength="200" required></label>
-                                <label class="checkout-field checkout-field--wide">Apartment, building, etc. (optional)<input name="address2" autocomplete="shipping address-line2" maxlength="200"></label>
-                                <label class="checkout-field">City<input name="city" autocomplete="shipping address-level2" maxlength="100" required></label>
-                                <label class="checkout-field">State / region<input name="state" autocomplete="shipping address-level1" maxlength="100" required></label>
-                                <label class="checkout-field">Postal code<input name="postalCode" autocomplete="shipping postal-code" maxlength="20" required></label>
-                                <label class="checkout-field">Country<select name="country" autocomplete="shipping country" required><option value="">Select country</option></select></label>
-                            </div>
-                        </fieldset>
-                    </form>
+                    <section class="checkout-payment" aria-labelledby="upi-title">
+                        <p class="eyebrow">Direct payment</p>
+                        <h2 id="upi-title">Pay by UPI</h2>
+                        <p class="checkout-status">One mask is ₹7,999 including GST, with free shipping across India. Contact us to confirm any discount before paying.</p>
+                        <p class="checkout-status" data-upi-unavailable>Contact SKINTRONICS on Instagram for the UPI ID and payment QR code.</p>
+                        <div data-upi-details hidden>
+                            <p class="checkout-demo-note" data-upi-demo hidden>Preview only — dummy UPI details and QR code. Do not send payment using these details.</p>
+                            <p class="checkout-status" data-upi-instructions>Scan the QR code in your UPI app, or pay using the UPI ID below. Check the recipient name and amount before confirming.</p>
+                            <figure class="checkout-qr" data-upi-qr hidden>
+                                <img data-upi-qr-image alt="SKINTRONICS UPI payment QR code" width="256" height="256">
+                                <figcaption><a class="checkout-text-link" data-upi-download download="skintronics-upi-qr">Save QR code</a></figcaption>
+                            </figure>
+                            <dl class="checkout-upi">
+                                <div><dt>Pay to</dt><dd data-upi-recipient></dd></div>
+                                <div><dt>UPI ID</dt><dd><code data-upi-id></code></dd></div>
+                            </dl>
+                            <button class="button button--outline checkout-pay" data-upi-copy type="button">Copy UPI ID</button>
+                            <p class="checkout-copy-status" data-upi-copy-status role="status" aria-live="polite"></p>
+                        </div>
+                        <h3>After payment</h3>
+                        <p class="checkout-status">Send your payment screenshot or UPI transaction reference, full name, phone number and delivery address with PIN code to <a class="checkout-text-link" href="https://www.instagram.com/skintronics_?utm_source=qr&amp;igsh=MXUxZ2Nwb2Y3emQxZg==" target="_blank" rel="noopener noreferrer">@skintronics_ on Instagram</a>. We’ll confirm your payment and order after checking the transfer.</p>
+                        <noscript><p class="checkout-status">Contact SKINTRONICS on Instagram for payment details, or enable JavaScript to view them here.</p></noscript>
+                    </section>
                     </div>
                     <aside class="checkout-summary" aria-labelledby="summary-title">
                         <h2 id="summary-title">Order summary</h2>
-                        <p class="checkout-test-note" data-checkout-test hidden>Razorpay test mode — no real money will be charged.</p>
                         <dl class="checkout-totals">
                             <div><dt>MRP</dt><dd class="checkout-mrp">₹14,999</dd></div>
                             <div><dt>Mask × 1</dt><dd data-checkout-price>₹7,999</dd></div>
@@ -79,17 +83,10 @@
                             <div><dt>GST / tax</dt><dd data-checkout-tax>Included</dd></div>
                             <div class="checkout-total"><dt>Total</dt><dd data-checkout-total>₹7,999</dd></div>
                         </dl>
-                        <p class="checkout-offer">Instagram followers get ₹1,500 off after following @skintronics_ and sharing the page with 10 friends. Available all year.</p>
-                        <p class="checkout-status" id="payment-status" role="status">Online payment is not available yet. Contact SKINTRONICS to place an order or claim a discount.</p>
-                        <button class="button button--primary checkout-pay" data-checkout-pay type="submit" form="delivery-form" disabled aria-describedby="payment-status">Pay with Razorpay</button>
-                        <button class="button button--outline checkout-pay" data-checkout-check type="button" hidden>Check payment status</button>
-                        <div class="checkout-result" data-checkout-result hidden tabindex="-1">
-                            <h3 data-checkout-result-title>Payment confirmed</h3>
-                            <p>Order reference: <strong data-checkout-reference></strong></p>
-                            <button class="button button--outline checkout-pay" data-checkout-reset type="button">Start a new order</button>
-                        </div>
+                        <p class="checkout-offer">Instagram followers get ₹1,500 off after following @skintronics_ and sharing the page with 10 friends. Available all year. Contact us to confirm your discount and final amount before paying.</p>
+                        <p class="checkout-status">Payments and orders are confirmed manually by SKINTRONICS. Keep your UPI transaction reference until your order is confirmed.</p>
+                        <a class="button button--primary checkout-pay" href="https://www.instagram.com/skintronics_?utm_source=qr&amp;igsh=MXUxZ2Nwb2Y3emQxZg==" target="_blank" rel="noopener noreferrer">Send payment details on Instagram <span aria-hidden="true">↗</span></a>
                         <a class="checkout-contact" href="https://www.instagram.com/skintronics_?utm_source=qr&amp;igsh=MXUxZ2Nwb2Y3emQxZg==" target="_blank" rel="noopener noreferrer">Contact SKINTRONICS on Instagram <span aria-hidden="true">↗</span></a>
-                        <noscript><p class="checkout-status">Enable JavaScript to check payment availability, or contact SKINTRONICS using the link above.</p></noscript>
                     </aside>
                 </div>
             </div>

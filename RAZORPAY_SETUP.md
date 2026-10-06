@@ -1,8 +1,10 @@
 # Razorpay checkout
 
+The initial storefront now uses direct UPI payments. See [UPI_SETUP.md](UPI_SETUP.md). This guide describes the retained Razorpay integration for a future phase; its settings do not activate Razorpay in the current customer page.
+
 For Cloudflare hosting and the new admin dashboard, use [ADMIN_SETUP.md](ADMIN_SETUP.md). The instructions below describe the original single-process Node/file-store checkout. Cloudflare deployment replaces that file store with D1 and provides admin order management, refund synchronisation and queued email delivery.
 
-The site now uses Razorpay Standard Checkout. A Node.js server creates the Razorpay order, stores the delivery address privately, verifies the payment signature, checks capture status, and records the confirmed payment. The browser cannot set the charged price.
+The retained backend supports Razorpay Standard Checkout. A Node.js server creates the Razorpay order, stores the delivery address privately, verifies the payment signature, checks capture status, and records the confirmed payment. A future customer integration must use the server's charged price.
 
 ## Local setup
 
